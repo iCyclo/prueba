@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ShareDataService } from '../../shared/services/share_data.service';
-import { UserData } from '../../shared/types/user.types';
 import { Router } from '@angular/router';
+import { ShareDataService } from '../../shared/services/share_data.service';
 
 @Component({
   selector: 'app-success',

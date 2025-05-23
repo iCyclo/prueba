@@ -33,7 +33,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class NasaComponent implements OnInit {
   private readonly nasaService = inject(NasaService);
 
-  showToday : boolean = true
+  showToday: boolean = true;
 
   todayImage!: NasaImageResponse | null;
   allImages: NasaImageResponse[] = [];
@@ -59,9 +59,7 @@ export class NasaComponent implements OnInit {
       this.showToday = false;
       this.nasaService
         .getImagesInRange(startDate, endDate)
-        .pipe(
-          tap((images) => (this.allImages = images)),
-        )
+        .pipe(tap((images) => (this.allImages = images)))
         .subscribe();
     }
   }
@@ -77,9 +75,7 @@ export class NasaComponent implements OnInit {
 
   onPageChange(page: number) {
     this.currentPage = page;
-
   }
-
 
   private formatDate(date: Date): string {
     return date.toISOString().split('T')[0];

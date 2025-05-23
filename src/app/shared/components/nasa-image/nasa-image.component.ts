@@ -5,19 +5,16 @@ import { NasaImageResponse } from '../../types/nasa.types';
   selector: 'app-nasa-image',
   templateUrl: './nasa-image.component.html',
   styleUrls: ['./nasa-image.component.css'],
-  standalone: true
+  standalone: true,
 })
 export class NasaImageComponent implements OnInit {
-
   @Input()
-  isTodayImage = true
+  isTodayImage = true;
 
   @Input()
   data!: NasaImageResponse;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

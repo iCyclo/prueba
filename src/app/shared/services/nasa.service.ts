@@ -9,7 +9,7 @@ import { NasaImageResponse } from '../types/nasa.types';
 export class NasaService {
   private readonly http = inject(HttpClient);
   private readonly apiUrl = 'https://api.nasa.gov/planetary/apod';
-  private readonly apiKey = 'qn30fvuNg8IqJCjL5HAD7MkMLzAEc0ZCFWRvt5kc'; // Sustituye con tu propia API Key si la tienes
+  private readonly apiKey = 'qn30fvuNg8IqJCjL5HAD7MkMLzAEc0ZCFWRvt5kc';
 
   constructor() {}
 
@@ -18,7 +18,10 @@ export class NasaService {
     return this.http.get<NasaImageResponse>(this.apiUrl, { params });
   }
 
-  getImagesInRange(startDate: string, endDate: string): Observable<NasaImageResponse[]> {
+  getImagesInRange(
+    startDate: string,
+    endDate: string
+  ): Observable<NasaImageResponse[]> {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('start_date', startDate)

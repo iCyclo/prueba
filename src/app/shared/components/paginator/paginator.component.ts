@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'app-paginator',
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.css'],
-  standalone: true
+  standalone: true,
 })
 export class PaginatorComponent {
   @Input() currentPage = 1;
