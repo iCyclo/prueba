@@ -1,0 +1,26 @@
+@if (isTodayImage) {
+  <div class="container glass">
+    <h1>Imagen de hoy {{data.date}}</h1>
+    <h2>{{data.title}}</h2>
+    <img [src]="data.url" [alt]="data.title">
+    <p>{{data.explanation}}</p>
+    @if (data.copyright) {
+      <p>Creditos de la imagen y Copyright: <span class="bold"> {{data.copyright}}</span></p>
+    }
+  </div>
+} @else {
+  <a [href]="data.url" target="_blank">
+    <div class="card glass">
+      <h2>{{data.title}}</h2>
+      @if (data.media_type === 'image') {
+        <img [src]="data.url" [alt]="data.title">
+      } @else {
+        <p class="bold">Tipo de recurso no es una imagen (click para ver)</p>
+      }
+      <p>{{data.date}}</p>
+      @if (data.copyright) {
+        <p class="bold">{{data.copyright}}</p>
+      }
+    </div>
+  </a>
+}

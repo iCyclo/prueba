@@ -1,0 +1,32 @@
+<div class="bg" [ngStyle]="{'background-image': 'url(' + todayImage?.hdurl + ')'}"></div>
+
+<header class="header ">
+  <img class="logo" src="/assets/images/nasa_logo.png" alt="">
+</header>
+
+<div class="field">
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccione fechas</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate [formControl]="startDateCtrl" placeholder="Fecha inicial">
+          <input matEndDate [formControl]="endDateCtrl" placeholder="Fecha final">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <button class="glass" (click)="searchByRange()">Buscar</button>
+  </div>
+
+<main>
+  @if (showToday && todayImage) {
+    <app-nasa-image [data]="todayImage"/>
+  } @else if(images.length > 0) {
+      <div class="grid">
+        @for (img of images; track img.url) {
+          <app-nasa-image ngxMasonryItem  [data]="img" [isTodayImage]="false"/>
+        }
+      </div>
+        <app-paginator [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"/>
+  }
+
+</main>

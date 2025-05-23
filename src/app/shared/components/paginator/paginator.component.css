@@ -1,0 +1,16 @@
+span, button{
+    color: #fff;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

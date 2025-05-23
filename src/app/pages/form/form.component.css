@@ -1,0 +1,64 @@
+
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+form,
+.fieldset,
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+form,
+.fieldset {
+  gap: 25px;
+}
+
+form {
+  justify-content: space-between;
+}
+
+.field {
+  flex-direction: column-reverse;
+  gap: 5px;
+}
+
+.field label {
+  margin-left: 10px;
+}
+
+.field input {
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  outline: none;
+  padding: 5px 10px;
+  transition: border-color 0.3s;
+}
+
+.field input:focus {
+  border-bottom-color: #5352ec;
+}
+
+.field input:focus + label {
+  color: #5352ec;
+  font-weight: bold;
+}
+
+button {
+  background-color: #5352ec;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled{
+    background-color: #9a9af5;
+    cursor: not-allowed;
+}

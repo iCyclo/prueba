@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <h1>Formulario</h1>
+  <form action="submit" [formGroup]="form">
+    <div class="fieldset">
+
+      <div class="field">
+        <input type="text" id="nombre" placeholder="Ingrese nombre(s)" formControlName="name" required>
+        <label for="nombre">Nombre(s)</label>
+      </div>
+      
+      <div class="field">
+        <input type="text" id="paterno" placeholder="Ingrese apellido paterno" formControlName="paternalSurname" required>
+        <label for="paterno">Apellido Paterno</label>
+      </div>
+
+      <div class="field">
+        <input type="text" id="materno" placeholder="Ingrese apellido materno" formControlName="maternalSurname" required>
+        <label for="materno">Apellido Materno</label>
+      </div>
+
+      <div class="field">
+        <input type="password" id="contra" placeholder="Ingrese contraseña" formControlName="password" required>
+        <label for="contra">Contraseña</label>
+      </div>
+
+    </div>
+    <button (click)="sendData()" [disabled]="btnDisabled">Enviar</button>
+  </form>
+</div>
